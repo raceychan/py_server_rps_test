@@ -21,7 +21,6 @@ async def send_requests(total_requests):
 
 async def send_request(conn_num: int, req_per_conn: int):
     requests= {asyncio.create_task(send_requests(req_per_conn)) for _ in range(conn_num)}
-
     await asyncio.gather(*requests)
 
 
@@ -38,9 +37,8 @@ async def main():
     total_requests = conn_num * req_per_conn
     rps = round(total_requests / total_time)
 
-    print(f"Send {total_requests} request using {conn_num} session in a single core,  spent {total_time:.2f} seconds, which converts to {rps} rps")
+    print(f"Send {total_requests} requests using {conn_num} sessions in a single core,  spent {total_time:.2f} seconds, which converts to {rps} rps")
     
-
 
 
 if __name__ == '__main__':
