@@ -14,7 +14,7 @@ In a terminal session, execute command:
 python -m async_server.server
 ```
 
-In another terminal session, executge:
+In another terminal session, execute:
 
 ## client.py
 
@@ -26,5 +26,5 @@ python -m async_server.client
 
 ```bash
 python -m async_server.client
-Send 100000 request using 10 session in a single core,  spent 1.26 seconds, which converts to 79434 rps
+Send 100000 request using 10 sessions in a single core spent 1.26 seconds, which converts to 79434 rps
 ```

@@ -3,13 +3,19 @@ import asyncio
 import uvloop
 
 
+def endpoint():
+    response = "HTTP/1.1 200 OK\r\nContent-Length: 12\r\n\r\nHello, World"
+    return response
+
+
 async def handle_client(reader, writer):
     while True:
         request_data = await reader.read(1000)
         if not request_data:
             break
 
-        response = "HTTP/1.1 200 OK\r\nContent-Length: 12\r\n\r\nHello, World"
+
+        response = endpoint()
         writer.write(response.encode())
         await writer.drain()
     
